@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+:root
+    --background-color: #d8d6d6
+    --foreground-color: #fff0ff
+
+    --primary-text-color: #000
+    --secondry-text-color: #b8b3b3
+    --error-text-color: #000
+    --warning-text-color: #0000
+    --link-text-color: #00fa53
+
+    --primary-color: #50dba6
+    --secondry-color: #50dba6
+    --error-color: #50dba6
+    --warning-color: #50dba6
+
+    --primary-accent-color: #6bc5a2
+    --secondry-accent-color: #74c9a8
+
+    --selection-color: #50dba683
+
+    background-color: var(--background-color)
+    color: var(--primary-text-color)
+    font-family: sans-serif
+
+@media (prefers-color-scheme: dark)
+    :root
+        --background-color: #171b19
+        --foreground-color: #070404
+
+        --primary-text-color: #f0ffff
+        --secondry-text-color: #b8b3b3
+        --error-text-color: #000
+        --warning-text-color: #0000
+        --link-text-color: #3dff6e
+
+        --primary-color: #29b658
+        --secondry-color: #14a76e
+        --error-color: #50dba6
+        --warning-color: #50dba6
+
+        --primary-accent-color: #50dba6
+        --secondry-accent-color: #16c582
+
+        --selection-color: #50dba683
+
+@media (prefers-color-scheme: light)
+    :root
+        --background-color: #d8d6d6
+        --foreground-color: #fff
+
+        --primary-text-color: #1d1d1d
+        --secondry-text-color: rgb(255, 255, 255)
+        --error-text-color: #000
+        --warning-text-color: #0000
+        --link-text-color: #f48e8e
+
+        --primary-color: #f48e8e
+        --secondry-color: #c77171
+        --error-color: #50dba6
+        --warning-color: #50dba6
+
+        --primary-accent-color: #ed4444
+        --secondry-accent-color: #f32b2b
+
+        --selection-color: rgba(244, 142, 142, 0.76)
+
+html
+    line-height: 1.6
+    padding: 0
+    margin: 0
+
+*
+    box-sizing: border-box
+
+body::-webkit-scrollbar
+    width: .50em
+    background-color: var(--secondary-background)
+
+body::-webkit-scrollbar-track
+    box-shadow: inset 0 0 2px var(--p-accent-color)
+
+body::-webkit-scrollbar-thumb
+    background-color: var(--p-accent-color)
+    border-radius: 24px
+
+::selection
+    background: var(--selection-color)
+
+::-moz-selection
+    background: var(--selection-color)
+
+a
+    text-decoration: none
+    color: var(--link-text-color)
+    font-weight: 300
+    font-size: medium
+
+a:hover
+    text-decoration: none
+    color: var(--p-accent-color)
+
+a:visited
+    text-decoration: none
+
+a:active
+    text-decoration: underline
+
+
+.centerd
+    text-align: center
+
+h1,h2,h6
+    font-weight: 300
+    font-family: monospace
