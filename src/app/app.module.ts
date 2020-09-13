@@ -9,6 +9,8 @@ import { FeaturesComponent } from './features/features.component';
 import { OpenSourcesComponent } from './open-sources/open-sources.component';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { TosComponent } from './tos/tos.component';
+import { SearchComponent } from './search/search.component';
+import { MainNavBarComponent } from './main-nav-bar/main-nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { TosComponent } from './tos/tos.component';
     FeaturesComponent,
     OpenSourcesComponent,
     PrivacyComponent,
-    TosComponent
+    TosComponent,
+    SearchComponent,
+    MainNavBarComponent
   ],
   imports: [
     BrowserModule,

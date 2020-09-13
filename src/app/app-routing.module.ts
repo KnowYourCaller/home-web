@@ -1,7 +1,19 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from '@angular/core'
+import { Routes, RouterModule } from '@angular/router'
 
-const routes: Routes = [];
+import { PrivacyComponent } from './privacy/privacy.component'
+import { SearchComponent } from './search/search.component'
+import { TosComponent } from './tos/tos.component'
+
+const routes: Routes = [
+
+  { path: 'search', component: SearchComponent },
+
+  { path: 'tos', component: TosComponent },
+  { path: 'terms', component: TosComponent },
+  { path: 'privacy', component: PrivacyComponent },
+
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
