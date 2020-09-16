@@ -1,7 +1,13 @@
-<div class="centered" >
+<div class="centered">
 
-    <h1>Qucik search</h1>
+  <ng-hcaptcha
+    theme={{theme}}
+    (verify)="onVerify($event)"
+    (expired)="onExpired($event)"
+    (error)="onError($event)"
+  >
+  </ng-hcaptcha>
+
+  <button color="accent" mat-stroked-button (click)='featchInfo()'>submit</button>
 
 </div>
-
-<app-footer></app-footer>

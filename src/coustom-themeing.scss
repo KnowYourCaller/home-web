@@ -1,0 +1,168 @@
+
+@import './coustom-themeing-font.scss';
+@import './coustom-themeing-comman.scss';
+
+
+/* Dark theme component */
+
+$mat-primary-dark: (
+  main: #30c460,
+  lighter: #c1edcf,
+  darker: #1eaf44,
+  200: #30c460,
+  // For slide toggle,
+  contrast:
+    (
+      main: $dark-primary-text,
+      lighter: $dark-primary-text,
+      darker: $light-primary-text,
+    ),
+);
+
+$mat-accent-dark: (
+  main: #20d08d,
+  lighter: #bcf1dd,
+  darker: #13be70,
+  200: #20d08d,
+  // For slide toggle,
+  contrast:
+    (
+      main: $dark-primary-text,
+      lighter: $dark-primary-text,
+      darker: $dark-primary-text,
+    ),
+);
+
+$mat-warn-dark: (
+  main: #bc1c1c,
+  lighter: #ebbbbb,
+  darker: #a51111,
+  200: #bc1c1c,
+  // For slide toggle,
+  contrast:
+    (
+      main: $light-primary-text,
+      lighter: $dark-primary-text,
+      darker: $light-primary-text,
+    ),
+);
+
+/* 
+Dark theme component ended 
+And
+Light theme component started
+*/
+
+$mat-primary-light: (
+  main: #d22525,
+  lighter: #f2bebe,
+  darker: #c11616,
+  200: #d22525,
+  contrast: (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  ),
+);
+
+$mat-accent-light: (
+  main: #ed4444,
+  lighter: #fac7c7,
+  darker: #e52d2d,
+  200: #ed4444,
+  contrast: (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  ),
+);
+
+$mat-warn-light: (
+  main: #950000,
+  lighter: #dfb3b3,
+  darker: #780000,
+  200: #950000,
+  contrast: (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  ),
+);
+
+/* Light theme component ended */
+
+$theme-primary-light: mat-palette($mat-primary-light, main, lighter, darker);
+$theme-accent-light: mat-palette($mat-accent-light, main, lighter, darker);
+$theme-warn-light: mat-palette($mat-warn-light, main, lighter, darker);
+
+$theme-light: mat-light-theme(
+  $theme-primary-light,
+  $theme-accent-light,
+  $theme-warn-light
+);
+
+$theme-primary-dark: mat-palette($mat-primary-dark, main, lighter, darker);
+$theme-accent-dark: mat-palette($mat-accent-dark, main, lighter, darker);
+$theme-warn-dark: mat-palette($mat-warn-dark, main, lighter, darker);
+
+body {
+  --primary-color: #30c460;
+  --primary-lighter-color: #c1edcf;
+  --primary-darker-color: #1eaf44;
+  --text-primary-color: #{$dark-primary-text};
+  --text-primary-lighter-color: #{$dark-primary-text};
+  --text-primary-darker-color: #{$light-primary-text};
+}
+
+body {
+  --accent-color: #20d08d;
+  --accent-lighter-color: #bcf1dd;
+  --accent-darker-color: #13be70;
+  --text-accent-color: #{$dark-primary-text};
+  --text-accent-lighter-color: #{$dark-primary-text};
+  --text-accent-darker-color: #{$dark-primary-text};
+}
+
+body {
+  --warn-color: #bc1c1c;
+  --warn-lighter-color: #ebbbbb;
+  --warn-darker-color: #a51111;
+  --text-warn-color: #{$light-primary-text};
+  --text-warn-lighter-color: #{$dark-primary-text};
+  --text-warn-darker-color: #{$light-primary-text};
+}
+
+$theme-dark: mat-dark-theme($theme-primary-dark, $theme-accent-dark, $theme-warn-dark);
+
+@include angular-material-theme($theme-dark);
+
+@media (prefers-color-scheme: light) {
+  @include angular-material-theme($theme-light);
+
+  body {
+    --primary-color: #d22525;
+    --primary-lighter-color: #f2bebe;
+    --primary-darker-color: #c11616;
+    --text-primary-color: #{$light-primary-text};
+    --text-primary-lighter-color: #{$dark-primary-text};
+    --text-primary-darker-color: #{$light-primary-text};
+  }
+
+  body {
+    --accent-color: #ed4444;
+    --accent-lighter-color: #fac7c7;
+    --accent-darker-color: #e52d2d;
+    --text-accent-color: #{$light-primary-text};
+    --text-accent-lighter-color: #{$dark-primary-text};
+    --text-accent-darker-color: #{$light-primary-text};
+  }
+
+  body {
+    --warn-color: #950000;
+    --warn-lighter-color: #dfb3b3;
+    --warn-darker-color: #780000;
+    --text-warn-color: #{$light-primary-text};
+    --text-warn-lighter-color: #{$dark-primary-text};
+    --text-warn-darker-color: #{$light-primary-text};
+  }
+}

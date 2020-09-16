@@ -18,9 +18,11 @@
 
     --selection-color: #50dba683
 
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.007)
     background-color: var(--background-color)
     color: var(--primary-text-color)
     font-family: sans-serif
+    font-weight: 200
 
 @media (prefers-color-scheme: dark)
     :root
@@ -71,6 +73,17 @@ html
 
 *
     box-sizing: border-box
+    font-weight: 200
+    color: var(--primary-text-color)
+    font-weight: 200
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.007)
+
+/** .scroller
+    width: 300px
+    height: 100px
+    overflow-y: scroll
+    scrollbar-color: rebeccapurple green
+    scrollbar-width: thin **/
 
 body::-webkit-scrollbar
     width: .50em
@@ -104,7 +117,6 @@ a:visited
 
 a:active
     text-decoration: underline
-
 
 .centered
     text-align: center

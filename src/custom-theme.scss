@@ -1,0 +1,47 @@
+/* @import "~@angular/material/theming";
+@include mat-core();
+
+$kyc-web-primary: mat-palette($mat-pink);
+$kyc-web-accent: mat-palette($mat-pink, A200, A100, A400);
+$kyc-web-warn: mat-palette($mat-red);
+
+$kyc-web-theme-light: mat-light-theme(
+  (
+    color: (
+      primary: $kyc-web-primary,
+      accent: $kyc-web-accent,
+      warn: $kyc-web-warn,
+    ),
+  )
+);
+
+$kyc-web-theme-dark: mat-dark-theme(
+  (
+    color: (
+      primary: $kyc-web-primary,
+      accent: $kyc-web-accent,
+      warn: $kyc-web-warn,
+    ),
+  )
+);
+
+@include angular-material-theme($kyc-web-theme-dark);
+
+
+@media (prefers-color-scheme: light) {
+  @include angular-material-color($kyc-web-theme-light);
+} 
+*/
+
+//https://materialtheme.arcsine.dev/   https://bit.ly/2RtbAFd
+@import './coustom-themeing.scss';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
