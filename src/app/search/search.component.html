@@ -1,4 +1,6 @@
-<div class="centered">
+<div class="centered" layout-align="center center">
+
+  <mat-card *ngIf="data" class="short-lenght"> {{data | json}} </mat-card>
 
   <ng-hcaptcha
     theme={{theme}}
@@ -9,5 +11,6 @@
   </ng-hcaptcha>
 
   <button color="accent" mat-stroked-button (click)='featchInfo()'>submit</button>
+
 
 </div>

@@ -20,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 import { NgHcaptchaModule } from 'ng-hcaptcha';
 
@@ -47,6 +48,7 @@ import { NgHcaptchaModule } from 'ng-hcaptcha';
     MatInputModule,
     FormsModule,
     MatCardModule,
+    MatSnackBarModule,
 
     NgHcaptchaModule.forRoot({
       siteKey: 'd57a840e-0950-4db1-a942-5254ce656b48',
