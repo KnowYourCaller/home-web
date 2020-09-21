@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { error } from 'protractor';
 import { CallerSearchService } from '../caller-search.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSnackBarConfig } from '@angular/material/snack-bar';
+import { environment } from 'src/environments/environment';
+
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-search',
@@ -12,29 +15,38 @@ import { MatSnackBarConfig } from '@angular/material/snack-bar';
 export class SearchComponent implements OnInit {
   constructor(
     private search: CallerSearchService,
-    private _snackBar: MatSnackBar
-  ) {}
+    private _snackBar: MatSnackBar,
+    fb: FormBuilder
+  ) {
+
+    this.signUpForm = fb.group({
+      captcha: ['', Validators.required]
+    })
+
+  }
+
+  signUpForm: FormGroup;
+  isFatching = false;
+  data;
 
   theme = 'dark';
   token = {
     token: '',
-    isVerifyed: true,
+    isVerifyed: !environment.production,
   };
-
-  isFatching = false;
-
-  data;
 
   ngOnInit(): void {
     window
       .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', update);
+      .addEventListener('change', this.update);
 
-    function update() {
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-        ? (this.theme = 'dark')
-        : (this.theme = 'light');
-    }
+    this.update()    
+  }
+
+  update() {
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+      ? (this.theme = 'dark')
+      : (this.theme = 'light');
   }
 
   onVerify(token: string) {
@@ -72,7 +84,9 @@ export class SearchComponent implements OnInit {
     }
 
     this.isFatching = true;
-    this.data = undefined
+    this.data = undefined;
+
+    this.signUpForm.reset();
 
     this.search.fatchCallerInfo(number, this.token.token).subscribe(
       (data: any) => {
@@ -91,8 +105,13 @@ export class SearchComponent implements OnInit {
         console.log(`on completed`);
 
         this.isFatching = false;
-      }
+      }      
     );
+
+    function c(){
+      
+    }
+
   }
 
   showToUser(msg: string, durationInSec = 3) {

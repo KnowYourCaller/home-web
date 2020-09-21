@@ -18,11 +18,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
+import {MatGridListModule} from '@angular/material/grid-list'; 
 
 import { NgHcaptchaModule } from 'ng-hcaptcha';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { NgHcaptchaModule } from 'ng-hcaptcha';
     TosComponent,
     SearchComponent,
     MainNavBarComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,8 +50,10 @@ import { NgHcaptchaModule } from 'ng-hcaptcha';
     MatButtonModule,
     MatInputModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCardModule,
     MatSnackBarModule,
+    MatGridListModule,
 
     NgHcaptchaModule.forRoot({
       siteKey: 'd57a840e-0950-4db1-a942-5254ce656b48',

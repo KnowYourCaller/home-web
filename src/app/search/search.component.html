@@ -1,16 +1,21 @@
 <div class="centered" layout-align="center center">
+  <mat-card *ngIf="data" class="short-lenght">
+    <h1><mat-icon>phone</mat-icon> {{ data.phoneNumber }}</h1>
+    <h1><mat-icon>perm_identity</mat-icon> {{ data.fullName }}</h1>
+  </mat-card>
 
-  <mat-card *ngIf="data" class="short-lenght"> {{data | json}} </mat-card>
+  <mat-card *ngIf="data" class="short-lenght">{{ data | json }}</mat-card>
 
-  <ng-hcaptcha
-    theme={{theme}}
-    (verify)="onVerify($event)"
-    (expired)="onExpired($event)"
-    (error)="onError($event)"
-  >
-  </ng-hcaptcha>
+  <form [formGroup]="signUpForm">
+    <ng-hcaptcha
+      theme="{{ theme }}"
+      formControlName="captcha"
+      (verify)="onVerify($event)"
+      (expired)="onExpired($event)"
+      (error)="onError($event)"
+    >
+    </ng-hcaptcha>
+  </form>
 
-  <button color="accent" mat-stroked-button (click)='featchInfo()'>submit</button>
-
-
+  <button mat-raised-button (click)="featchInfo()">submit</button>
 </div>

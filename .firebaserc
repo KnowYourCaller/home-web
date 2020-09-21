@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "knowyourcaller-app"
+  },
+  "targets": {
+    "knowyourcaller-app": {
+      "hosting": {
+        "public": [
+          "knowyourcaller"
+        ]
+      }
+    }
+  }
+}

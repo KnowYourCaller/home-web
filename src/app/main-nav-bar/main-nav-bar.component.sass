@@ -1,3 +1,10 @@
+
+.sty
+    position: relative
+    font-size: 24px
+    letter-spacing: 5px
+    text-shadow: 1px 1px 1px var(--secondry-color)
+
 .spacer
     flex: 1 1 auto
 
@@ -20,10 +27,18 @@
     margin-top: 2px
     margin-bottom: 2px
 
+.card
+    min-width: 340px
+    max-width: 450px
+    width: 400px
+    background-color: var(--secondry-color)
+
 .number-input
     background: transparent
     appearance: none
     -webkit-appearance: none
+    width: 120px
+    font-weight: 400
     border: none
     outline: none
     font-size: medium
@@ -34,7 +49,7 @@
 
 ::ng-deep .mat-card
     border-radius: 30px !important
-    max-width: 350px    
+    max-width: 350px
 
 .minFontToolbar
     font: 500 6px/0px Ubuntu
