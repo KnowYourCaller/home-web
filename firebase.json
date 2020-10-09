@@ -1,11 +1,23 @@
 {
   "hosting": {
+    "target": "public",
     "public": "dist/kyc-web/",
       "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
       "rewrites": [
         {
           "source": "**",
-          "destination": "/index.html"
+          "destination": "/index.html",
+          "headers": [
+            {
+              "key": "Access-Control-Allow-Origin",
+              "value": "*"
+            },
+            {
+              "key": "Access-Control-Allow-Headers",
+              "value": "*"
+            }
+          ]
+          
         }
       ]
   }

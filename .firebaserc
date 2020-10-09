@@ -6,7 +6,7 @@
     "knowyourcaller-app": {
       "hosting": {
         "public": [
-          "knowyourcaller"
+          "knowyourcaller-app"
         ]
       }
     }
